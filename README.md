@@ -56,7 +56,7 @@ ReDoc → http://127.0.0.1:8000/redoc
 
 ## ⚙️ Ejecución APACHE CAMEL
 
-Importante: se asume que se cuenta con maven instalado.
+Importante: se asume que se cuenta con maven instalado, version 3.9.11.
 
 ### 1. Crear entorno virtual (opcional)
 ```bash
