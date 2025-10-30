@@ -13,24 +13,26 @@ Incluye una estructura organizada conforme el documento asignado.
 
 ## 📂 Estructura del proyecto
 ```bash
-fastapi_project/
-│── src/
-│   │── main.py 
-│   │── models.py 
-│   └── services.py/ 
-│
-│── .gitignore
-│── envios.csv
-│── postman_collection.json
-│── README.md
-│── requirements.txt
-│── script.sh
+EXAMEN-P1-INTEGRACION/
+├── python/
+│   ├── src/
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── services.py
+│   │   ├── envios.csv
+│   │   ├── postman_collection.json
+│   │   ├── requirements.txt
+├── camel/
+├── README.md
+├── .gitignore
+└── script.sh
 ```
 
-## ⚙️ Instalación y ejecución
+## ⚙️ Instalación y ejecución Python
 
 ### 1. Crear entorno virtual (opcional)
 ```bash
+cd python
 python -m venv venv
 source venv/bin/activate   # Linux / Mac
 venv\Scripts\activate      # Windows
@@ -51,6 +53,40 @@ uvicorn src.main:app --host 127.0.0.1 --port 8000 --reload
 Swagger UI → http://127.0.0.1:8000/docs
 ReDoc → http://127.0.0.1:8000/redoc
 ```
+
+## ⚙️ Ejecución APACHE CAMEL
+
+Importante: se asume que se cuenta con maven instalado.
+
+### 1. Crear entorno virtual (opcional)
+```bash
+cd camel\camel-labs\lab01\camel-lab
+mvn clean package
+java -jar target/camel-lab-1.0-SNAPSHOT-shaded.jar
+```
+
+## ⚙️ Ejecución PROYECTO COMPLETO
+
+Importante: se asume que se han realizado los pasos previos yla carpeta output dentro de CAMEL se encuentra vacia.
+La carpeta input debe contener el archivo llamado envios.csv con el formato determinado.
+
+### 1. Ejecutar entorno python 
+```bash
+cd python
+uvicorn src.main:app --host 127.0.0.1 --port 8000 --reload
+```
+### 2. Ejecutar entorno Apache Camel 
+```bash
+cd python
+java -jar target/camel-lab-1.0-SNAPSHOT-shaded.jar
+```
+
+### 3. Validar en UISwagger
+Abrir en el navegador 
+```bash
+127.0.0.1:8000/docs
+```
+
 
 ## 📌 Estado
 Versión inicial `0.0.1` – proyecto base con FastAPI y documentación automática.  
