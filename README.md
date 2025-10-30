@@ -1,4 +1,4 @@
-# 📘 People Connect API - LMS  
+# 📘 Examen Practico P1 
 ```bash
 Aplicación **FastAPI** para el examen P1.  
 Incluye una estructura organizada conforme el documento asignado.  
